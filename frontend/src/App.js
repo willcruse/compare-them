@@ -1,6 +1,6 @@
 import React from 'react';
-import {Container, Row, Col} from "react-bootstrap"
-import Place from "./Place"
+import {Container, Row, Col} from "react-bootstrap";
+import Place from "./Place";
 
 function App() {
 

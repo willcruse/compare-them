@@ -1,17 +1,17 @@
-import React, { useState } from "react"
-import {Container, Row, Col, Form, Button, Image} from "react-bootstrap"
-import BBQIcon from "./bbq.png"
+import React, { useState } from "react";
+import {Container, Row, Col, Form, Button, Image} from "react-bootstrap";
+import BBQIcon from "./bbq.png";
 
+const REQUIRED_KEYS = ["name", "type", "starRating", "reviews"];
 
-const REQUIRED_KEYS = ["name", "type", "starRating", "reviews"]
 const Place = () => {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [placeInfo, setPlaceInfo] = useState({});
 
     const checkKeys = (keys) => {
-        return keys.filter((ele) => {return REQUIRED_KEYS.includes(ele)}).length >= REQUIRED_KEYS.length
-    }
+        return keys.filter((ele) => {return REQUIRED_KEYS.includes(ele)}).length >= REQUIRED_KEYS.length;
+    };
 
     const search = (e) => {
         e.preventDefault();
@@ -26,11 +26,11 @@ const Place = () => {
                 starRating: 2,
                 reviewNumber: 0
             }]
-        }
+        };
         if (checkKeys(Object.keys(newObj))) {
             setPlaceInfo(newObj);
         }
-    }
+    };
     
 
     return (
@@ -66,7 +66,7 @@ const PlaceInfo = ({placeInfo}) => {
 }
 
 const Review = ({review}) => (
-    <Container fluid>
+    <Container fluid style={{outline: "1px solid black"}}>
     <Col>
         <Row><p>{review.name}</p></Row>
         <Row><p>{review.body}</p></Row>
